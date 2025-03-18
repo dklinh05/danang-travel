@@ -1,0 +1,1 @@
+com.vnpay.common.ajaxServlet

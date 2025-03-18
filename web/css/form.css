@@ -1,0 +1,92 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Feb 21, 2025, 4:54:37 PM
+    Author     : hungt
+*/
+
+body {
+    font-family: Inter, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: white;
+}
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #095BB8;
+    color: white;
+    padding: 20px;
+}
+.form-section {
+    text-align: center;
+    margin: 20px 0;
+}
+.form-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.form-group div {
+    background: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 18px;
+    text-align: center;
+    min-width: 200px;
+}
+.budget-options div {
+    width: 100%;
+    max-width: 300px;
+}
+.submit-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.submit-btn button {
+    background: #0599D9;
+    color: white;
+    font-size: 24px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.cta-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #0599D9;
+    color: white;
+    font-size: 24px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    width: fit-content;
+    margin: auto;
+}
+@media (max-width: 768px) {
+    .form-group {
+        flex-direction: column;
+        align-items: center;
+    }
+    .form-group div {
+        width: 100%;
+        max-width: 300px;
+    }
+}

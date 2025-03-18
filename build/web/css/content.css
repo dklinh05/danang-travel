@@ -1,0 +1,449 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Feb 21, 2025, 1:49:50 PM
+    Author     : hungt
+*/
+
+
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100vw; /* Chiều rộng bằng 100% viewport */
+    height: 70vh; /* Chiều cao bằng 100% viewport */
+    overflow: hidden; /* Tránh tràn hình */
+}
+
+.carousel img {
+    width: 100%; /* Chiều rộng 100% */
+    height: 100%; /* Chiều cao 100% */
+    object-fit: cover; /* Cắt hình để vừa với vùng chứa */
+}
+
+.carousel button {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+#prevBtn { left: 10px; }
+#nextBtn { right: 10px; }
+
+.image-container {
+    position: relative;
+    width: 100vw;
+    max-height: 500px;
+    overflow: hidden;
+}
+.responsive-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-height: 500px;
+}
+
+.welcome-text {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 48px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    text-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
+}
+
+.gradient-banner {
+    position: relative; /* Thay vì absolute */
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, white 52%);
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Canh giữa chữ */
+    font-size: 40px;
+}
+
+
+.banner-text {
+    font-size: 48px;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    color: black;
+    margin-left: 50px;
+    margin-right: 50px;
+    
+}
+
+.cta-button {
+    margin-top: -20px;
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 36px;
+    background: #0599D9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-size: 32px;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    z-index: 10;
+}
+.cta-button svg {
+    width: 55px;
+    height: 55px;
+}
+
+.place-card {
+    width: 100%;
+    max-width: 291px;
+    background: rgba(217, 217, 217, 0.15);
+    border-radius: 15px;
+    text-align: center;
+}
+.place-card img {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.place-title {
+    font-size: 24px;
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    color: black;
+    padding: 10px;
+}
+
+.tour-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.place-card img, .tour-card img {
+    object-fit: cover;
+    width: 100%;
+    height: 200px; /* Giới hạn chiều cao để đồng bộ */
+}
+
+ .btn-confirm, .btn-home {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-book {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    margin: 0 auto; /* Căn giữa */
+}
+
+
+/* Định dạng chung cho trang */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                url("../img/danang-background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Giữ nền cố định khi cuộn */
+}
+
+    
+
+
+/* Container trung tâm */
+.container {
+    width: 50%;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Tiêu đề */
+h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* Form đặt tour */
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.booking-form label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+/* Input và Select */
+.booking-form input,
+.booking-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Các nút bấm */
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.btn-confirm {
+    background-color: #28a745;
+}
+
+.btn-cancel {
+    background-color: #dc3545;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+
+
+.about-section {
+    background: linear-gradient(to right, #f8f9fa, #e3f2fd); /* Gradient nhẹ */
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 30px auto;
+    max-width: 800px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #0077b6; /* Màu xanh biển Đà Nẵng */
+    margin-bottom: 15px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.about-section p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+    font-family: 'Inter', sans-serif;
+}
+
+
+.food-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to right, #ffecd2, #fcb69f); /* Gradient cam nhẹ */
+    border-radius: 10px;
+    margin: 40px auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+}
+
+.food-section h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #d35400; /* Màu cam trầm */
+    margin-bottom: 20px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.food-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.food-item {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.food-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.food-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.food-item p {
+    font-size: 16px;
+    color: #444;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+.activities-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    margin: 40px auto;
+    max-width: 900px;
+}
+
+.activities-section h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.activities-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.activity-item {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.activity-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.activity-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.activity-item p {
+    font-size: 16px;
+    color: #444;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+
+
+
+.reviews-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to right, #d4fc79, #96e6a1);
+    border-radius: 10px;
+    margin: 40px auto;
+    max-width: 900px;
+}
+
+.reviews-section h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.review-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.review-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    font-style: italic;
+}
+
+.review-item span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+
+.map-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: #ecf0f1;
+    border-radius: 10px;
+    margin: 40px auto;
+    max-width: 900px;
+}
+
+.map-section h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #34495e;
+    margin-bottom: 20px;
+}
+
+.map-container iframe {
+    border-radius: 10px;
+    width: 100%;
+    height: 400px;
+}

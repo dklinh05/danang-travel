@@ -1,0 +1,34 @@
+.price-box {
+    font-size: 32px;
+    font-weight: 600;
+}
+.price-highlight {
+    font-size: 40px;
+    font-weight: 600;
+    color: #FF8A00;
+}
+.section-title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+    color: #FF8A00;
+    margin-top: 20px;
+}
+.activity-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 500;
+}
+.btn-more {
+    background: #2493CF;
+    border-radius: 100px;
+    color: white;
+    font-size: 32px;
+    font-weight: 600;
+    padding: 10px;
+    width: 100%;
+    max-width: 312px;
+    text-align: center;
+    margin: 20px auto;
+    display: block;
+}
