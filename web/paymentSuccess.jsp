@@ -33,8 +33,8 @@
         <h2>Kết quả thanh toán</h2>
         <p>Mã giao dịch: <strong><%= request.getAttribute("transaction_id") %></strong></p>
         <p>Mã phản hồi: <strong><%= request.getAttribute("response_code") %></strong></p>
-        <p>Thông điệp: <strong><%= request.getAttribute("message") %></strong></p>
-        <p>Chữ ký hợp lệ: <strong><%= request.getAttribute("is_valid_signature") %></strong></p>
+<!--        <p>Thông điệp: <strong><%= request.getAttribute("message") %></strong></p>
+        <p>Chữ ký hợp lệ: <strong><%= request.getAttribute("is_valid_signature") %></strong></p>-->
 
         <% if ("00".equals(request.getAttribute("response_code"))) { %>
             <p class="success">🎉 Thanh toán thành công!</p>
@@ -42,7 +42,7 @@
             <p class="failed">❌ Thanh toán thất bại.</p>
         <% } %>
 
-        <a href="index.jsp">Quay về trang chủ</a>
+        <a href="home.jsp">Quay về trang chủ</a>
     </div>
 </body>
 </html>

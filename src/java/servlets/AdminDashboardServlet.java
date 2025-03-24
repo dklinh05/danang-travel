@@ -1,5 +1,6 @@
 package servlets;
 
+import com.controller.*;
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
@@ -18,14 +19,11 @@ import com.entity.Booking;
  *
  * @author ASUS
  */
-
-
- 
 @WebServlet("/adminDashboard")
 public class AdminDashboardServlet extends HttpServlet {
 
     // Cấu hình kết nối
-    private static final String DB_URL =  "jdbc:sqlserver://127.0.0.1:1435;databaseName=TourBookingDB;encrypt=true;trustServerCertificate=true;";
+    private static final String DB_URL = "jdbc:sqlserver://127.0.0.1:1435;databaseName=TourBookingDB;encrypt=true;trustServerCertificate=true;";
     private static final String DB_USER = "sa";
     private static final String DB_PASSWORD = "123";
 
@@ -169,6 +167,111 @@ public class AdminDashboardServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String action = request.getParameter("action");
+
+        if (action != null) {
+            switch (action) {
+                case "addUser":
+                    addUser(request, response);
+                    return;
+                case "addTour":
+                    addTour(request, response);
+                    return;
+                case "addBooking":
+                    addBooking(request, response);
+                    return;
+            }
+        }
         doGet(request, response);
     }
+
+// Function to add a new user
+    private void addUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String userID = request.getParameter("userID");
+        String password = request.getParameter("password");
+        String role = request.getParameter("role");
+
+        String sql = "INSERT INTO users (userID, password, role) VALUES (?, ?, ?)";
+
+        try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD); PreparedStatement ps = conn.prepareStatement(sql)) {
+
+                ps.setString(1, userID);
+                ps.setString(2, password);
+                ps.setString(3, role);
+                ps.executeUpdate();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        response.sendRedirect("adminDashboard");
+    }
+
+// Function to add a new tour
+    private void addTour(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String tourName = request.getParameter("tourName");
+        String description = request.getParameter("description");
+        int priceAdult = Integer.parseInt(request.getParameter("priceAdult"));
+        int priceChild = Integer.parseInt(request.getParameter("priceChild"));
+        int priceInfant = Integer.parseInt(request.getParameter("priceInfant"));
+        String imageUrl = request.getParameter("imageUrl");
+
+        String sql = "INSERT INTO tours (tour_name, description, price_adult, price_child, price_infant, image_url) VALUES (?, ?, ?, ?, ?, ?)";
+
+        try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD); PreparedStatement ps = conn.prepareStatement(sql)) {
+
+                ps.setString(1, tourName);
+                ps.setString(2, description);
+                ps.setInt(3, priceAdult);
+                ps.setInt(4, priceChild);
+                ps.setInt(5, priceInfant);
+                ps.setString(6, imageUrl);
+                ps.executeUpdate();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        response.sendRedirect("adminDashboard");
+    }
+
+// Function to add a new booking
+    private void addBooking(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        int tourId = Integer.parseInt(request.getParameter("tourId"));
+        String name = request.getParameter("name");
+        String phone = request.getParameter("phone");
+        String gender = request.getParameter("gender");
+        Date dob = Date.valueOf(request.getParameter("dob"));
+        String address = request.getParameter("address");
+        int adultCount = Integer.parseInt(request.getParameter("adultCount"));
+        int childCount = Integer.parseInt(request.getParameter("childCount"));
+        int infantCount = Integer.parseInt(request.getParameter("infantCount"));
+        int totalPrice = Integer.parseInt(request.getParameter("totalPrice"));
+
+        String sql = "INSERT INTO bookings (tour_id, name, phone, gender, dob, address, adult_count, child_count, infant_count, total_price, booking_date) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, GETDATE())";
+
+        try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD); PreparedStatement ps = conn.prepareStatement(sql)) {
+
+                ps.setInt(1, tourId);
+                ps.setString(2, name);
+                ps.setString(3, phone);
+                ps.setString(4, gender);
+                ps.setDate(5, dob);
+                ps.setString(6, address);
+                ps.setInt(7, adultCount);
+                ps.setInt(8, childCount);
+                ps.setInt(9, infantCount);
+                ps.setInt(10, totalPrice);
+                ps.executeUpdate();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        response.sendRedirect("adminDashboard");
+    }
+
 }

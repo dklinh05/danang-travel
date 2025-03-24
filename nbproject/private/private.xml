@@ -3,11 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/DaNangProject_1_1_1_1_1/web/css/admin.css</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/DaNangProject_1_1_1_1_1/web/bookingSuccess.jsp</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/DaNangProject_1_1_1_1_1/web/updateBooking.jsp</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/DaNangProject_1_1_1_1_1/src/java/com/connect/DatabaseInfor.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/DaNangProject_1_1_1_1_1/web/admin.jsp</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/DaNangProject_1_1_1_1_1/src/java/com/controller/TourListServlet.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/DaNangProject_1_1_1_1_1/web/css/index.css</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/DaNangProject_1_1_1_1_1/web/index.jsp</file>
         </group>
     </open-files>
 </project-private>

@@ -1,35 +1,3 @@
-/* Header */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    background: #095BB8; /* Màu nền của header */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Nút Đăng xuất nằm ở góc trên bên phải */
-.logout-form {
-    margin-left: auto;
-}
-
-.btn-logout {
-    background: white; /* Nền trắng */
-    color: black; /* Chữ màu đen */
-    border: 2px solid #095BB8; /* Viền xanh */
-    padding: 10px 15px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: 0.3s ease;
-}
-
-/* Hiệu ứng hover */
-.btn-logout:hover {
-    background: #095BB8; /* Nền xanh khi hover */
-    color: white; /* Chữ trắng khi hover */
-}
 
 .carousel {
     display: flex;
@@ -214,180 +182,126 @@ html, body {
     padding: 0;
 }
 
-
-/*.gradient-banner {
-    position: relative;
-    width: 100%;
-    height: 100px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, white 52%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 40px;
-}
-
-
-.banner-text {
-    font-size: 48px;
-    font-family: Inter, sans-serif;
-    font-weight: 400;
-    color: black;
-    margin-left: 50px;
-    margin-right: 50px;
-    
-}
-
-.cta-button {
-    margin-top: -20px;
-    position: absolute;
-    bottom: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 12px 36px;
-    background: #0599D9;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    font-size: 32px;
-    font-family: Inter, sans-serif;
-    font-weight: 400;
-    color: white;
+.pagination {
     text-align: center;
-    cursor: pointer;
-    z-index: 10;
-}
-.cta-button svg {
-    width: 55px;
-    height: 55px;
+    margin-top: 20px;
 }
 
-.place-card {
-    width: 100%;
-    max-width: 291px;
-    background: rgba(217, 217, 217, 0.15);
-    border-radius: 15px;
-    text-align: center;
-}
-.place-card img {
-    width: 100%;
-    height: 100%;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-}
-.place-title {
-    font-size: 24px;
-    font-family: Inter, sans-serif;
-    font-weight: 600;
-    color: black;
-    padding: 10px;
-}
-
-.tour-card {
-    border: 1px solid #ddd;
-    padding: 15px;
-    text-align: center;
-    background: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.place-card img, .tour-card img {
-    object-fit: cover;
-    width: 100%;
-    height: 200px; 
-}
-
- .btn-confirm, .btn-home {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.btn-book {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: 0.3s;
-    margin: 0 auto;
-}
-
-
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: #f8f9fa;
-    margin: 0;
+.pagination ul {
+    list-style: none;
     padding: 0;
-}
-
-    
-
-
-.container {
-    width: 50%;
-    margin: 50px auto;
-    background-color: #fff;
-    padding: 30px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    text-align: center;
-}
-
-
-h2 {
-    color: #007bff;
-    margin-bottom: 20px;
-}
-
-
-.booking-form {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    justify-content: center;
 }
 
-.booking-form label {
+.pagination li {
+    margin: 0 5px;
+}
+
+.pagination a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.pagination .active a {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.sort-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 20px;
+}
+
+.sort-container label {
+    font-size: 16px;
     font-weight: 500;
-    margin-bottom: 5px;
-    text-align: left;
+    margin-right: 10px;
+    color: #333;
 }
 
-.booking-form input,
-.booking-form select {
-    width: 100%;
-    padding: 10px;
+.sort-container select {
+    padding: 8px 12px;
+    font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
 }
 
-.btn {
-    display: inline-block;
-    padding: 12px 20px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+.sort-container select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+
+.search-form {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.search-form input {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    margin-top: 10px;
-    transition: 0.3s;
+    outline: none;
+    width: 250px;
 }
 
-.btn-confirm {
-    background-color: #28a745;
+.search-form button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 5px;
 }
 
-.btn-cancel {
-    background-color: #dc3545;
+.search-form button:hover {
+    background-color: #0056b3;
 }
 
-.btn:hover {
-    opacity: 0.8;
-}*/
+/* Đăng xuất ở bên phải */
+.logout-form {
+    position: absolute;
+    right: 20px;
+}
+
+.btn-logout {
+    background: white;
+    color: black;
+    border: 2px solid #095BB8;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.btn-logout:hover {
+    background: #095BB8;
+    color: white;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #095BB8; /* Màu nền của header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+

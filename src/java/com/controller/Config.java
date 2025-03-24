@@ -21,7 +21,7 @@ public class Config {
     public static String vnp_TmnCode = " 0CEMUAZ4"; // Thay bằng mã TMN của bạn
     public static String vnp_HashSecret = "FBLP79XQM63M4U2XFL77PFC024ZJHD83"; // Thay bằng hash secret
     public static String vnp_PayUrl = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html"; // URL thanh toán VNPAY
-    public static String vnp_Returnurl = "http://localhost:8080/DaNangProject_1_1_1_1/VNPayReturnServlet";
+    public static String vnp_Returnurl = "http://localhost:8080/DaNangProject_1_1_1_1_1/VNPayReturnServlet";
     public static String vnp_OrderInfo = "Premium";
     public static String ordertype = "170000";
     public static int amount = 100000 * 100;

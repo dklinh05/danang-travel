@@ -23,35 +23,6 @@
             </p>
         </section>
 
-        <!-- Phần Carousel -->
-<!--        <div class="carousel">
-            <button id="prevBtn">❮</button>
-            <img id="carouselImage" src="img/beach.png" alt="Bãi biển Đà Nẵng">
-            <p class="welcome-text">Chào mừng đến với Đà Nẵng</p>
-            <button id="nextBtn">❯</button>
-        </div>
-
-        <script>
-            const images = ["img/beach.png", "img/dragon-bridge.png", "img/bana-hills.png", "img/chua-linh-ung.png","img/bao-tang-cham.png"];
-            let currentIndex = 0;
-
-            setInterval(function() {
-                currentIndex = (currentIndex + 1) % images.length;
-                document.getElementById("carouselImage").src = images[currentIndex];
-            }, 3000);
-
-            document.getElementById("nextBtn").addEventListener("click", function () {
-                currentIndex = (currentIndex + 1) % images.length;
-                document.getElementById("carouselImage").src = images[currentIndex];
-            });
-
-            document.getElementById("prevBtn").addEventListener("click", function () {
-                currentIndex = (currentIndex - 1 + images.length) % images.length;
-                document.getElementById("carouselImage").src = images[currentIndex];
-            });
-        </script>-->
-
-
         <!-- Phần Ẩm Thực Đà Nẵng -->
         <section class="food-section">
             <h2>Ẩm thực Đà Nẵng</h2>
@@ -119,8 +90,6 @@
         </iframe>
     </div>
 </section>
-
-
 
         <jsp:include page="footer.jsp"/>
     

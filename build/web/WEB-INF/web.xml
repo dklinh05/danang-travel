@@ -56,12 +56,8 @@
         <servlet-name>VNPayPaymentServlet</servlet-name>
         <url-pattern>/VNPayPaymentServlet</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>VNPayReturnServlet</servlet-name>
-        <url-pattern>/VNPayReturnServlet</url-pattern>
-    </servlet-mapping>
 
-    <welcome-file-list>
-        <welcome-file>home.jsp</welcome-file>
-    </welcome-file-list>
+<welcome-file-list>
+        <welcome-file>preLoading.html</welcome-file>
+</welcome-file-list>
 </web-app>

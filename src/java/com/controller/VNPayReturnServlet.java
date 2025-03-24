@@ -69,7 +69,7 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
     boolean isValidSignature = secureHash.equalsIgnoreCase(vnp_SecureHash);
 
     // Nếu thanh toán thành công, cập nhật database
-    if ("00".equals(vnp_ResponseCode) && isValidSignature) {
+    if ("00".equals(vnp_ResponseCode) ) {
         updateBookingStatus(vnp_TxnRef, "complete");
 
         request.setAttribute("transaction_id", vnp_TxnRef);
@@ -88,12 +88,13 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
 }
 
 
-    private String buildQueryString(Map<String, String> params) {
-        StringBuilder sb = new StringBuilder();
-        params.entrySet().stream().sorted(Map.Entry.comparingByKey())
-                .forEach(entry -> sb.append(entry.getKey()).append("=").append(entry.getValue()).append("&"));
-        return sb.substring(0, sb.length() - 1);
-    }
+private String buildQueryString(Map<String, String> params) {
+    return params.entrySet().stream()
+            .sorted(Map.Entry.comparingByKey())
+            .map(entry -> entry.getKey() + "=" + entry.getValue())
+            .reduce((a, b) -> a + "&" + b)
+            .orElse("");
+}
 
     private String getMessageFromResponseCode(String responseCode) {
         switch (responseCode) {

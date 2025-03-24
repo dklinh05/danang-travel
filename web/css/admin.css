@@ -1,48 +1,196 @@
-.fade-in {
-    animation: fadeInAnimation ease 1s;
-    animation-fill-mode: forwards;
-}
-@keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-.action-btn {
-    margin-right: 5px;
+/* ======================
+   🌍 Travel-Themed Admin Panel
+   ====================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
-/* Header */
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Ensure the background covers the entire viewport even when scrolling */
+    background: url("../img/Da-Nang-Admin.jpg") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* This fixes the background relative to the viewport */
+    color: white;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Glassmorphism Header */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
-    background: #095BB8; /* Màu nền của header */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 12px 25px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    width: 95%;
+    position: fixed;
+    top: 15px; /* Slight gap from top */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+.header:hover {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.3);
 }
 
-/* Nút Đăng xuất nằm ở góc trên bên phải */
+/* Logout Button */
 .logout-form {
-    margin-left: auto;
+    margin-left: 0;
 }
-
 .btn-logout {
-    background: white; /* Nền trắng */
-    color: black; /* Chữ màu đen */
-    border: 2px solid #095BB8; /* Viền xanh */
-    padding: 10px 15px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
+    background: #ff758c;
+    border: none;
+    padding: 8px 15px;
+    color: white;
+    border-radius: 20px;
     font-weight: bold;
-    transition: 0.3s ease;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+}
+.btn-logout:hover {
+    background: #ff1e56;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
 }
 
-/* Hiệu ứng hover */
-.btn-logout:hover {
-    background: #095BB8; /* Nền xanh khi hover */
-    color: white; /* Chữ trắng khi hover */
+/* Admin Title - push down so it's not hidden by header */
+h1 {
+    text-align: center;
+    font-weight: 600;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    margin-top: 100px; /* Increased to avoid overlap with header */
+}
+
+/* Container - also add some top margin so content doesn't hide behind header */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-top: 20px;  /* Additional spacing below h1 */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
+}
+
+/* Tables */
+.table {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    /* Force table text to white for better readability */
+    color: #fff;
+}
+/* If you want a slightly different shade for table text, you can use #f0f0f0 or #eeeeee, etc. */
+
+/* Make sure all cells (header + body) use a readable color */
+.table thead th,
+.table tbody td {
+    color: #fff !important; /* ensure the text is always white */
+}
+
+.table thead {
+    background: rgba(0, 0, 0, 0.4);
+}
+.table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transition: 0.3s ease-in-out;
+}
+
+/* Buttons */
+.btn {
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+    border-radius: 25px;
+    padding: 8px 15px;
+}
+.btn-success {
+    background: #4cd137;
+    border: none;
+}
+.btn-success:hover {
+    background: #44bd32;
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px rgba(76, 209, 55, 0.5);
+}
+.btn-danger {
+    background: #e84118;
+    border: none;
+}
+.btn-danger:hover {
+    background: #c23616;
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px rgba(232, 65, 24, 0.5);
+}
+
+/* Floating Glow Effect */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+.glow-effect {
+    animation: float 3s infinite ease-in-out;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Smooth Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+.fade-in {
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Travel-Inspired Pagination */
+.pagination {
+    justify-content: center;
+    margin-top: 15px;
+}
+.pagination li a {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 20px;
+    padding: 5px 12px;
+    margin: 3px;
+    transition: 0.3s;
+}
+.pagination li a:hover {
+    background: white;
+    color: #ff758c;
+}
+.pagination .active a {
+    background: white;
+    color: #ff758c;
+    font-weight: bold;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
 }
